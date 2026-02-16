@@ -48,10 +48,14 @@ public class App {
                             System.out.println("Virheellinen soitinvalinta.");
                             break;
                     }
-                
+                    break;
                 case 2:
-                    for (Instrument instrument : instruments) {
-                        System.out.println(instrument.getDetails());
+                    if (instruments.isEmpty()) {
+                        System.out.println("Ei lisättyjä soittimia.");
+                    } else {
+                        for (Instrument instrument : instruments) {
+                            System.out.println(instrument.getDetails());
+                            }
                     }
                     break;
                 case 3:
@@ -63,10 +67,14 @@ public class App {
                     }
                     break;
                 case 4:
-                    for (Instrument instrument : instruments) {
-                        if (instrument instanceof Drum) {
-                            Drum d = (Drum) instrument;
-                            d.playBeat();
+                    if (instruments.isEmpty()) {
+                        System.out.println("Ei lisättyjä soittimia.");
+                    } else {
+                        for (Instrument instrument : instruments) {
+                            if (instrument instanceof Drum) {
+                                Drum d = (Drum) instrument;
+                                d.playBeat();
+                            }
                         }
                     }
                     break;
@@ -82,3 +90,4 @@ public class App {
         sc.close();
     }
 }
+
