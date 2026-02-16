@@ -67,14 +67,10 @@ public class App {
                     }
                     break;
                 case 4:
-                    if (instruments.isEmpty()) {
-                        System.out.println("Ei lisättyjä soittimia.");
-                    } else {
-                        for (Instrument instrument : instruments) {
-                            if (instrument instanceof Drum) {
-                                Drum d = (Drum) instrument;
-                                d.playBeat();
-                            }
+                    for (Instrument instrument : instruments) {
+                        if (instrument instanceof Drum) {
+                            Drum d = (Drum) instrument;
+                            d.playBeat();
                         }
                     }
                     break;
@@ -90,4 +86,5 @@ public class App {
         sc.close();
     }
 }
+
 
